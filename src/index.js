@@ -3,15 +3,22 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 import { BrowserRouter } from 'react-router-dom';
-// import { Provider } from 'react-redux';
-// import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+
+import menuReducer from './store/menuReducer';
+
+const store = createStore(
+  menuReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      {/* <Provider store={ store }> */}
+      <Provider store={ store }>
         <App />
-      {/* </Provider> */}
+      </Provider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
