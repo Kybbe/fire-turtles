@@ -1,6 +1,6 @@
 function Cart() {
     return(
-        <p>Cart</p>
+        <p>Din beställning</p>
     )
 }
 

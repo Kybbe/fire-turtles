@@ -17,3 +17,28 @@
   background-color: #39846D;
   color: white;
 }
+
+nav {
+  background-color: #2F2926;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 20px;
+}
+
+nav a:hover {
+  color: #39846D;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Comes from NavLink automatically, applied to the current route:s link */
+.active {
+  cursor: default;
+  color: #2c5247;
+}

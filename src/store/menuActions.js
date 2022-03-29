@@ -1,9 +1,35 @@
-// Template action, to increment counter as a example
-const increment = (data) => {
+const addMenu = (data) => {
   return {
-      type: 'INCREMENT',
-      payload: data
+    type: 'ADD_MENU',
+    payload: data
   }
-} 
+}
 
-export { increment }
+const addToCart = (data) => {
+  return {
+    type: 'ADD_TO_CART',
+    payload: data
+  }
+}
+
+const removeFromCart = (data) => {
+  return {
+    type: 'REMOVE_FROM_CART',
+    payload: data
+  }
+}
+
+const setOrderNrAndETA = (data) => {
+  return {
+    type: 'SET_ORDER_NR&ETA',
+    payload: data
+  }
+}
+
+const increment = () => {
+  return {
+    type: 'INCREMENT'
+  }
+}
+
+export { increment, addMenu, addToCart, removeFromCart, setOrderNrAndETA }
