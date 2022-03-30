@@ -19,6 +19,7 @@ function App() {
         <Route path="/" element={<Test />} />
         <Route path='/about' element={<AboutUs />} />
         <Route path='/menu' element={<Menu />} />
+        <Route path='/status' element={<Status />} />
       </Routes>
     </div>
   );
