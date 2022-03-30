@@ -7,6 +7,7 @@ import Cart from './components/Cart';
 import Menu from './views/Menu';
 import Test from './views/Test';
 import AboutUs from './views/AboutUs';
+import Status from './views/Status';
 
 
 function App() {
