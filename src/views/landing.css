@@ -1,24 +1,14 @@
 /* Vector */
 
-.flowerleft{
+.sides1{
 position: absolute;
-left: 35.05%;
-right: 37.85%;
-top: 37.67%;
-bottom: -133.32%;
+right: 0;
 
-background: #97C9CE;
-transform: matrix(-0.65, 0.77, -0.74, -0.65, 0, 0);
 }
-.flowerright{
+.sides2{
     position: absolute;
-left: 43.28%;
-right: 17.67%;
-top: 87.62%;
-bottom: -142.81%;
+left: 0;
 
-background: #1A4143;
-transform: matrix(-0.98, 0.23, -0.21, -0.97, 0, 0);
 }
 
 .a{
@@ -85,6 +75,23 @@ width: 375px;
 height: 667px;
 
 background: #38846D;
+/* Group 2 */
+
+
+position: absolute;
+width: 257px;
+height: 149px;
+left: 58px;
+top: 266px;
+/* Group 7 */
+
+
+position: absolute;
+width: 64px;
+height: 64px;
+left: 154px;
+top: 266px;
+
  /* header */
 
 
