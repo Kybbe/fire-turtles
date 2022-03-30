@@ -7,6 +7,7 @@ import Cart from './components/Cart';
 import Menu from './views/Menu';
 import AboutUs from './views/AboutUs';
 import Status from './views/Status';
+import Landing from './views/Landing';
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
       <Navbar />
       <Cart />
       <Routes>
-        <Route path="/" element={<Menu />} />  {/* Byt till landing page senare */}
+        <Route path="/landing" element={<Landing />} />  {/* Byt till landing page senare */}
         <Route path='/about' element={<AboutUs />} />
         <Route path='/menu' element={<Menu />} />
         <Route path='/status' element={<Status />} />
