@@ -18,6 +18,14 @@
   color: white;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  width: 375px;
+  Height: 655px;
+}
+
 nav {
   background-color: #2F2926;
   color: white;
@@ -41,4 +49,38 @@ nav a:hover {
 .active {
   cursor: default;
   color: #2c5247;
+}
+
+.cartList {
+  padding: 0;
+  list-style: none;
+}
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.arrow {
+  background-color: transparent;
+  border: none;
+  color: black;
+  cursor: pointer;
+}
+
+.cartTitle {
+  margin: 0;
+  font-size: 1.6em;
+}
+
+.cartPrice {
+  margin: 0;
+  margin-top: 5px;
+}
+
+.cartQuantity {
+  text-align: center;
+  margin: 0;
 }
