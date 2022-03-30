@@ -19,8 +19,5 @@ function Status() {
   </div>
     )
 }
-<<<<<<< Updated upstream
+
 export default Status;
-=======
-export default Status;
->>>>>>> Stashed changes
