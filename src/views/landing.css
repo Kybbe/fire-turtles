@@ -94,17 +94,41 @@ background: #38846D;
  left: 375px;
  top: 0px;
  
- transform: rotate(90deg);
-}
-.menu{
-    /* header */
+
+
+/* header */
 
 
 position: absolute;
 width: 667px;
-height: 143px;
-left: 375px;
-top: 0px;
+height: 169px;
+left: 0px;
+top: 667px;
 
-transform: rotate(90deg);
+
+
+}
+.sides{
+    /* Vector */
+
+
+position: absolute;
+left: -25.65%;
+right: 87.28%;
+top: 357.12%;
+bottom: -388.87%;
+
+background: #2F8C91;
+transform: matrix(0.98, -0.23, 0.21, 0.97, 0, 0);
+/* Vector */
+
+
+position: absolute;
+left: -9.13%;
+right: 82.05%;
+top: 387.29%;
+bottom: -517.98%;
+
+background: #BAE3DD;
+transform: matrix(0.65, -0.77, 0.75, 0.65, 0, 0);
 }
