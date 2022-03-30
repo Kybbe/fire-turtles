@@ -3,9 +3,6 @@ const inititalState = {
   cart: [],
   orderNr: 0,
   ETA: 0,
-
-  // for testing
-  counter: 0,
 }
 
 const todoReducer = (state = inititalState, action) => {

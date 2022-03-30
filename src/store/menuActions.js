@@ -26,10 +26,4 @@ const setOrderNrAndETA = (data) => {
   }
 }
 
-const increment = () => {
-  return {
-    type: 'INCREMENT'
-  }
-}
-
-export { increment, addMenu, addToCart, removeFromCart, setOrderNrAndETA }
+export { addMenu, addToCart, removeFromCart, setOrderNrAndETA }
