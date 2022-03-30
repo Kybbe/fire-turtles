@@ -7,7 +7,7 @@ function Status() {
       <h4>Ordernummer: </h4>
     </div>
     <div class="drone">
-      <Drone />
+      <img src= {Drone} alt='Drone'/>
     </div>
     <div class="order">
       <h1>Din beställning är på väg!</h1>
