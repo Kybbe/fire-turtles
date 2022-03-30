@@ -2,7 +2,7 @@ import Drone from '../assets/graphics/drone.svg';
 
 function Status() {
     return (
-        <div className="background">
+        <div className="background backgroundOrange">
           <div className="ordernum">
             <h4>Ordernummer: </h4>
           </div>

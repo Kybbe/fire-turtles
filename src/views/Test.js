@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from "react-redux";
+/* import { useSelector, useDispatch } from "react-redux";
 import { increment } from "../store/menuActions";
 
 export default function Test() {
@@ -16,4 +16,4 @@ export default function Test() {
       <button onClick={increase}>+</button>
     </div>
   );
-}
+} */
