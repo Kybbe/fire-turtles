@@ -1,8 +1,6 @@
-
-
 function Menu() {
     return (
-        <h1>MENU</h1>
+        <h1>Meny</h1>
     )
 }
 
