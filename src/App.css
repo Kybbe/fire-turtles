@@ -28,10 +28,16 @@ body {
 
 .App {
   position: relative;
+  height: 655px;
+  overflow: scroll;
 }
 
 .App, #root {
   min-height: 100%;
+}
+
+.noOverflowScroll {
+  overflow: hidden;
 }
 
 nav {
@@ -161,8 +167,10 @@ nav a:hover {
 }
 
 .cartList {
+  height: 360px;
   padding: 0;
   list-style: none;
+  overflow: scroll;
 }
 
 .cartItem {
