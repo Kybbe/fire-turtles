@@ -9,28 +9,29 @@ import { addToCart } from "../store/menuActions";
 function Menu() {
 	
 	const dispatch = useDispatch();
-	const cart = useSelector(state => state.cart);
+	const menu = useSelector(state => state.menu);
 
 	function addItem(item) {
 		console.log("adding item to cart", item);
 		dispatch( addToCart(item) );
 	}
-	console.log(cart)
 
 	return (
 		<div className="menuInfo backgroundBeige">
 			<img src={header} alt="header" className="header"></img>
-			<h1 style={{textAlign: "center"}}>MENU</h1>
+			<h1 style={{textAlign: "center"}}>Meny</h1>
 
 			<ul className='menuList'>
-				<li className='menuItem' onClick={() => addItem({name: "Kaffe Latte", price: "40"})}>
+				{menu.map(item => (
+					<li key={item.id} className='menuItem' onClick={() => addItem({name: item.title, price: item.price})}>
 					<img src={add} alt="add" className='menuPlus'></img>
 					<div className='menuItemText'>
-						<h2 className="menuTitle"> Kaffe Latte </h2>
-						<p className="menuDescription">description</p>
+						<h2 className="menuTitle">{item.title}</h2>
+						<p className="menuDescription">{item.desc}</p>
 					</div>
-					<h2 className="menuPrice">40 kr</h2>
-				</li>
+					<h2 className="menuPrice">{item.price} kr</h2>
+				</li>	
+				))}
 			</ul>
 			<img src={footer} alt="footer" className="footer"></img>
 		</div>
