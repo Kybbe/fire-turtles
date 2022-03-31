@@ -9,15 +9,13 @@ function Menu() {
 	
 	//useSelector hämtar menyn från store/state och separerar ut den infon vi vill ha.
 	const menu = useSelector(state => state.menu);
-
-    console.log(menu);
 	
     //hämtar info från state 
     //rad 21 (ul): loopar igenom varje objekt/item i menyn. 
 	return (
 		<div className="menuInfo backgroundBeige">
 			<img src={header} alt="header" className="header"></img>
-			<h1 style={{textAlign: "center"}}>MENU</h1>
+			<h1 style={{textAlign: "center"}}>Meny</h1>
 
             <ul className='menuList'>
                 { menu.map(item => ( 
