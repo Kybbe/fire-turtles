@@ -14,6 +14,7 @@ function App() {
     <div className="App" style={{height: "100%"}}>
       <Navbar />
       <Cart />
+      <div className='transparentBlackBackground hidden'></div>
       <Routes>
         <Route path="/" element={<Menu />} />  {/* Byt till landing page senare */}
         <Route path='/about' element={<AboutUs />} />

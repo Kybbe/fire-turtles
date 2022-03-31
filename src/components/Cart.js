@@ -7,6 +7,7 @@ function Cart() {
 
 	function openCart() {
 		document.querySelector('.cart').classList.toggle('openCart');
+		document.querySelector('.transparentBlackBackground').classList.toggle('hidden');
 	}
 
 	function order() {
