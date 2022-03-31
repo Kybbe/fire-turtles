@@ -1,6 +1,13 @@
+import { useDispatch } from "react-redux";
+import add from '../assets/graphics/add.svg';
+import { addToCart } from "../store/menuActions";
 
 
-function MenuItem() {
+
+function MenuItem(props) {
+    
+    const dispatch = useDispatch();
+
     function addItem(item) {
 		console.log("adding item to cart", item);
 		dispatch( addToCart(item) );
@@ -8,13 +15,13 @@ function MenuItem() {
 	
     return (
 
-        <li className='menuItem' onClick={() => addItem({ name: "Kaffe Latte", price: "40" })}>
+        <li className='menuItem' onClick={() => addItem({ name: props.item.name, price: props.item.price })}>
             <img src={add} alt="add" className='menuPlus'></img>
             <div className='menuItemText'>
-                <h2 className="menuTitle"> Kaffe Latte </h2>
-                <p className="menuDescription">description</p>
+                <h2 className="menuTitle"> { props.item.name } </h2>
+                <p className="menuDescription">{ props.item.desc }</p>
             </div>
-            <h2 className="menuPrice">40 kr</h2>
+            <h2 className="menuPrice"> { props.item.price } kr</h2>
 
         </li>
     )

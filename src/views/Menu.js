@@ -1,22 +1,16 @@
-import add from '../assets/graphics/add.svg';
 
 import MenuItem from '../components/MenuItem';
 import header from '../assets/graphics/graphics-header.svg';
 import footer from '../assets/graphics/graphics-footer.svg';
 
-import { useSelector, useDispatch } from "react-redux";
-import { addToCart } from "../store/menuActions";
+import { useSelector } from "react-redux";
 
 function Menu() {
 	
-	const dispatch = useDispatch();
+	
 	const cart = useSelector(state => state.cart);
 
-	function addItem(item) {
-		console.log("adding item to cart", item);
-		dispatch( addToCart(item) );
-	}
-	console.log(cart)
+	
 
 	return (
 		<div className="menuInfo backgroundBeige">
