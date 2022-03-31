@@ -26,4 +26,10 @@ const setOrderNrAndETA = (data) => {
   }
 }
 
-export { addMenu, addToCart, removeFromCart, setOrderNrAndETA }
+const deleteCart = () => {
+  return {
+    type: 'DELETE_CART'
+  }
+}
+
+export { addMenu, addToCart, deleteCart, removeFromCart, setOrderNrAndETA }

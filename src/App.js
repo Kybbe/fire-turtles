@@ -11,7 +11,7 @@ import Status from './views/Status';
 
 function App() {
   return (
-    <div className="App" style={{height: "100%"}}>
+    <div className="App">
       <Navbar />
       <Cart />
       <div className='transparentBlackBackground hidden'></div>

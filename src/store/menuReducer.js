@@ -63,6 +63,11 @@ const todoReducer = (state = inititalState, action) => {
           }
         })
       }
+    case 'DELETE CART':
+      return {
+        ...state,
+        cart: []
+      }
     //send orderNr and eta
     case 'SET_ORDER_NR&ETA':
       return {
