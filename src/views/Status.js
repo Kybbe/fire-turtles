@@ -1,3 +1,4 @@
+import '../views/Status.css';
 import Drone from '../assets/graphics/drone.svg';
 
 function Status() {
