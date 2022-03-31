@@ -2,10 +2,12 @@
 import MenuItem from '../components/MenuItem';
 import header from '../assets/graphics/graphics-header.svg';
 import footer from '../assets/graphics/graphics-footer.svg';
+import Cart from '../components/Cart';
 
 import { useSelector } from "react-redux";
 
 function Menu() {
+    
 	
 	//useSelector hämtar menyn från store/state och separerar ut den infon vi vill ha.
 	const menu = useSelector(state => state.menu);
@@ -13,7 +15,8 @@ function Menu() {
     //hämtar info från state 
     //rad 21 (ul): loopar igenom varje objekt/item i menyn. 
 	return (
-		<div className="menuInfo backgroundBeige">
+		<div className="menuInfo backgroundBeige ">
+             <Cart />
 			<img src={header} alt="header" className="header"></img>
 			<h1 style={{textAlign: "center"}}>Meny</h1>
 
