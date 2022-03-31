@@ -1,10 +1,23 @@
 import upArrow from '../assets/graphics/arrow-up.svg';
 import downArrow from '../assets/graphics/arrow-down.svg';
 
+import bag from '../assets/graphics/bag.svg';
+
 function Cart() {
+
+	function openCart() {
+		document.querySelector('.cart').classList.toggle('openCart');
+	}
+
+	function order() {
+		document.querySelector('.cart').classList.toggle('openCart');
+		console.log("ORDER");
+	}
+
 	return(
-		<div className="cart">
-			<h1>Din beställning</h1>
+		<div>
+			<div className="cart">
+			<h1 style={{textAlign: "center"}}>Din beställning</h1>
 
 			<ul className='cartList'>
 				<li className='cartItem'>
@@ -20,6 +33,22 @@ function Cart() {
 				</li>
 			</ul>
 
+			<div className='cartBottom'>
+				<div className='cartBottomText'>
+					<h2>Total</h2>
+					<p>Inkl moms + drönarleverans</p>
+				</div>
+				<div className='cartBottomPrice'>
+					<h2>123 kr</h2>
+				</div>
+			</div>
+			<button className='cartOrder' onClick={order}>Take my money!</button>
+
+		</div>
+		<div style={{position: "relative"}}>
+			<button className='cartBtn' onClick={openCart}><img src={bag} alt="bag"></img></button>
+			<p className='cartTotal'>0</p>
+		</div>
 		</div>
 	)
 }
