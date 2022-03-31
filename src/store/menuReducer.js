@@ -21,26 +21,21 @@ const todoReducer = (state = inititalState, action) => {
       }
     //send name and price, and if its in the cart its quantity gets increased
     case 'ADD_TO_CART':
+      let newCart = [...state.cart];
+      let found = false;
+      for (let i = 0; i < newCart.length; i++) {
+        if (newCart[i].name === action.payload.name) {
+          newCart[i].quantity++;
+          found = true;
+        }
+      }
+      if (!found) {
+        newCart.push({name: action.payload.name, price: action.payload.price, quantity: 1});
+      }
+
       return {
         ...state,
-        // each item in cart is an object with a name and a quantity
-        // if the item is already in the cart, increase the quantity
-        // if the item is not in the cart, add it to the cart with 1 quantity
-        cart: state.cart.map(item => {
-          if (item.name === action.payload.name) {
-            return {
-              ...item,
-              quantity: item.quantity + 1
-            }
-          } else {
-            return item
-          }
-        }
-        ).concat({
-          name: action.payload.name,
-          price: action.payload.price,
-          quantity: 1
-        })
+        cart: newCart
       }
     //send name
     case 'REMOVE_FROM_CART':
@@ -49,9 +44,9 @@ const todoReducer = (state = inititalState, action) => {
         // if the item is in the cart, decrease the quantity
         // if the item quantity is 1, remove the item from the cart
         cart: state.cart.map(item => {
-          if (item.name === action.payload.name) {
+          if (item.name === action.payload) {
             if (item.quantity === 1) {
-              return null
+              return null;
             } else {
               return {
                 ...item,
@@ -61,9 +56,9 @@ const todoReducer = (state = inititalState, action) => {
           } else {
             return item
           }
-        })
+        }).filter(item => item !== null)
       }
-    case 'DELETE CART':
+    case 'DELETE_CART':
       return {
         ...state,
         cart: []
