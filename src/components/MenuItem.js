@@ -15,10 +15,10 @@ function MenuItem(props) {
 	
     return (
 
-        <li className='menuItem' onClick={() => addItem({ name: props.item.name, price: props.item.price })}>
+        <li className='menuItem' onClick={() => addItem({ name: props.item.title, price: props.item.price })}>
             <img src={add} alt="add" className='menuPlus'></img>
             <div className='menuItemText'>
-                <h2 className="menuTitle"> { props.item.name } </h2>
+                <h2 className="menuTitle"> { props.item.title } </h2>
                 <p className="menuDescription">{ props.item.desc }</p>
             </div>
             <h2 className="menuPrice"> { props.item.price } kr</h2>
