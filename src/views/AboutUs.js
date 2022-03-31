@@ -1,7 +1,7 @@
 export default function AboutUs() {
   return (
     <div className="about backgroundBeige">
-      <h1>Om oss</h1>
+      <h1 style={{textAlign: "center"}}>Om oss</h1>
       <p>Airbean:s historia går tillbaka till 20,000 B.C när vår skapare Airius beaniclus lyfte sin nybryggda kanna kaffe för snabbt, och råkade kasta den ner i händerna på sin kompis. Detta ledde Airius till en häpnadsväckande upptäckt! Blandningen av luftigt kaffe och extremt snabb leverans blev en succé direkt. Sen dess har imperiet aldrig slutat växa. Den senaste utvecklingen hos Airbean har varit övergången från kastande till drönare, vilket har ökat effektiviteten och säkerheten hos våra kunder med 80000%! </p>
       <p>Du är välkommen in att testa den godaste versionen av ditt favoritkaffe, med en helt unik tvist av leverans! Airbean lovar nu även en brännskade-fri upplevelse!</p>
     
