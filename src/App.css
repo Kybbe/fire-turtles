@@ -30,6 +30,7 @@ body {
   position: relative;
   height: 655px;
   overflow: scroll;
+  overflow-x: hidden;
 }
 
 .App, #root {
