@@ -2,7 +2,7 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
-import Cart from './components/Cart';
+
 
 import Menu from './views/Menu';
 import AboutUs from './views/AboutUs';
@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Cart />
+     
       <div className='transparentBlackBackground hidden'></div>
       <Routes>
         <Route path="/" element={<Menu />} />  {/* Byt till landing page senare */}

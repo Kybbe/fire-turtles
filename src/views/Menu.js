@@ -1,36 +1,30 @@
-import add from '../assets/graphics/add.svg';
 
+import MenuItem from '../components/MenuItem';
 import header from '../assets/graphics/graphics-header.svg';
 import footer from '../assets/graphics/graphics-footer.svg';
+import Cart from '../components/Cart';
 
-import { useSelector, useDispatch } from "react-redux";
-import { addToCart } from "../store/menuActions";
+import { useSelector } from "react-redux";
 
 function Menu() {
+    
 	
-	const dispatch = useDispatch();
-	const cart = useSelector(state => state.cart);
-
-	function addItem(item) {
-		console.log("adding item to cart", item);
-		dispatch( addToCart(item) );
-	}
-	console.log(cart)
-
+	//useSelector hämtar menyn från store/state och separerar ut den infon vi vill ha.
+	const menu = useSelector(state => state.menu);
+	
+    //hämtar info från state 
+    //rad 21 (ul): loopar igenom varje objekt/item i menyn. 
 	return (
-		<div className="menuInfo backgroundBeige">
+		<div className="menuInfo backgroundBeige ">
+             <Cart />
 			<img src={header} alt="header" className="header"></img>
-			<h1 style={{textAlign: "center"}}>MENU</h1>
+			<h1 style={{textAlign: "center"}}>Meny</h1>
 
-			<ul className='menuList'>
-				<li className='menuItem' onClick={() => addItem({name: "Kaffe Latte", price: "40"})}>
-					<img src={add} alt="add" className='menuPlus'></img>
-					<div className='menuItemText'>
-						<h2 className="menuTitle"> Kaffe Latte </h2>
-						<p className="menuDescription">description</p>
-					</div>
-					<h2 className="menuPrice">40 kr</h2>
-				</li>
+            <ul className='menuList'>
+                { menu.map(item => ( 
+                    <MenuItem item={ item } />
+                )) }
+				
 			</ul>
 			<img src={footer} alt="footer" className="footer"></img>
 		</div>
