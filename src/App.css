@@ -19,17 +19,27 @@
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   font-size: 16px;
   width: 375px;
   Height: 655px;
 }
 
+.app, #root {
+  height: 100%;
+}
+
 nav {
   color: white;
-  display: flex;
+  /* display: flex; */
   justify-content: space-evenly;
+
+  display: none;
+}
+
+.openNav {
+  display: flex;
 }
 
 nav a {
@@ -48,6 +58,57 @@ nav a:hover {
 .active {
   cursor: default;
   color: #2c5247;
+}
+
+.cart {
+  display: none;
+
+  position: absolute;
+  width: 355px;
+  height: 595px;
+  background: white;
+  margin: 10px;
+  margin-top: 50px;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.openCart {
+  display: unset;
+}
+
+.cartBtn {
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+
+  position: absolute;
+  right: 10px;
+  top: 10px
+}
+
+.cartTotal {
+  position: absolute;
+  right: 5px;
+  top: 3px;
+  margin: 0;
+  z-index: 2;
+  background: red;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border-radius: 50%;
 }
 
 .cartList {
@@ -82,4 +143,82 @@ nav a:hover {
 .cartQuantity {
   text-align: center;
   margin: 0;
+}
+
+.cartBottom {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 20px);
+  padding: 10px;
+  position: absolute;
+  bottom: 40px;
+}
+
+.cartOrder {
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+  margin: 10px auto;
+  left: 50%;
+  transform: translateX(-50%);
+  border: none;
+  background: black;
+  color: white;
+  padding: 10px 0px;
+  border-radius: 20px;
+  font-size: 1.1em;
+}
+
+.menuInfo {
+  height: 100%;
+  position: relative;
+}
+
+.menuList {
+  padding: 0;
+  list-style: none;
+}
+
+.menuItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.menuPlus {
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  padding: 5px;
+  width: 25px;
+  margin-left: 15px;
+}
+
+.menuItemText {
+  width: 100%;
+  margin-left: 20px;
+}
+
+.menuTitle {
+  margin: 0;
+  font-size: 1.4em;
+}
+
+.menuDescription {
+  margin: 0;
+  font-size: 1em;
+}
+
+.menuPrice {
+  margin: 0;
+  font-size: 1.3em;
+  white-space: nowrap;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
 }
