@@ -83,23 +83,26 @@ nav a:hover {
   text-align: center;
   margin: 0;
 }
+.sides1{
+  position: right;
+ right: 0;
+  
+  }
 
 .airbeanfront{
-  background-color: #39846D;
-  width: 200px;
-  Height: 300px;
+  position: relative;
+  width: 360px;
+  height: 600px;
+  background: #38846D;
   display: flex;
   justify-content: center;
   align-content: center;
-  padding: 10px;
-}
-.sides1{
-  position: right;
-  right: 0;
   
-  }
+ 
+}
+
   .sides2{
       position: left;
-  left: 0;
+     left: 0;
   
   }
