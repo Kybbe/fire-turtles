@@ -1,14 +1,20 @@
 import  Landings from'../assets/graphics/airbean-landing.svg';
 import Sides1 from '../assets/graphics/intro-graphic-left.svg';
 import Sides2 from '../assets/graphics/intro-graphic-right.svg';
-import Menu from './Menu';
+
+import { useNavigate } from "react-router-dom";
 
 
+function Redirect(){
+    const navigate=useNavigate();
 
+    navigate('/menu')
+
+}
 
 function Landing() {
     return (
-    <section><button onClick={<Menu />}>Menu</button>
+    <section onClick={Redirect}>
         <div className="airbeanfront  ">
 
             <img src={Landings} alt="landings"></img>
