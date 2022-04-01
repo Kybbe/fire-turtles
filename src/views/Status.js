@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteCart } from "../store/menuActions";
 
-
 function Status() {
     const navigate = useNavigate();
     const dispatch = useDispatch();

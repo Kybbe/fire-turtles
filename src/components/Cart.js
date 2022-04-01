@@ -57,6 +57,13 @@ function Cart() {
 		function saveToLocalStorage() {
 		  localStorage.setItem("cart", JSON.stringify(cart))
 		}
+		function makeButtonBigAnimation() {
+			document.querySelector('.cartTotal').classList.add('orderButtonAnimation');
+			setTimeout(() => {
+				document.querySelector('.cartTotal').classList.remove('orderButtonAnimation');
+			}, 300);
+		}		
+		makeButtonBigAnimation();
 		saveToLocalStorage()
 	  }, [cart])
 	
