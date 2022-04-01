@@ -39,6 +39,25 @@ function Cart() {
 		totalQuantity += Number(cart[i].quantity);
 	}
 
+	//if "Gustav Adolfsbakelse" and "Bryggkaffe" is in cart, remove 40 from total price for each pair (so if there are 3 pairs, it will remove 120)
+	//the items may not be beside each other in the cart, so we need to check all items in the cart
+	var gustavs = 0;
+	var bryggkaffe = 0;
+	for (let i = 0; i < cart.length; i++) {
+		if (cart[i].name === "Gustav Adolfsbakelse") {
+			gustavs = cart[i].quantity;
+		}
+		if (cart[i].name === "Bryggkaffe") {
+			bryggkaffe = cart[i].quantity;
+		}
+	}
+	//while they are both above 0, remove one from each and remove 40 from total price
+	while (gustavs > 0 && bryggkaffe > 0) {
+		gustavs--;
+		bryggkaffe--;
+		totalPrice -= 40;
+	}
+
 	//NEDAN GÖR VI LOCALSTORAGE TILL CARTEN SÅ DET SPARAS NÄR VI UPPDATERAR SIDAN. 
     
 	 //useEffect - varjegång något uppdateras gör vi en funktion. Kommer senare användas i localstorage / callback.
@@ -97,8 +116,5 @@ function Cart() {
 		</div>
 	)
 }
-
-
-
 
 export default Cart;
