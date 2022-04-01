@@ -1,4 +1,3 @@
-import '../views/Status.css';
 import Drone from '../assets/graphics/drone.svg';
 import { useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -11,8 +10,6 @@ function Status() {
   const dispatch = useDispatch();
   const eta = useSelector(state => state.ETA);
   const orderNr = useSelector(state => state.orderNr);
-
-  
   
   useEffect(() => {
     const url = "https://my-json-server.typicode.com/zocom-christoffer-wallenberg/airbean/order"
