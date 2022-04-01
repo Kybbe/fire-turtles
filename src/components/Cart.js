@@ -10,6 +10,7 @@ import { navigate } from "react-redux";
 function Cart() {
 
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
   const cart = useSelector(state => state.cart);
 	
 	function openCart() {
@@ -21,7 +22,6 @@ function Cart() {
 	function order() {
 	  openCart();
 		console.log("ORDER");
-		navigate('/status')
 		//set cart to nothing since we ordered
 		dispatch( deleteCart() );
 		navigate('/status')
