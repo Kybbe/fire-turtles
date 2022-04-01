@@ -27,7 +27,7 @@ function CartItem({item}) {
 		<li className='cartItem' key={item.name ? item.name : ""}>
 			<div className='itemText'>
 				<h3 className='cartTitle'>{item.name ? item.name : ""}</h3>
-				<p className='cartPrice'>{item.price ? item.price : ""} kr</p>
+				<p className='cartPrice'>{item.price ? Number(item.price * item.quantity): ""} kr</p>
 			</div>
 			<div className="quantity">
 				<button className='arrow up' onClick={() => addItem({ name: item.name, price: item.price })}><img src={upArrow} alt="Up arrow"></img></button>
