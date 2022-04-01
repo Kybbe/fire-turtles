@@ -7,7 +7,8 @@ import Navbar from './components/Navbar';
 import Menu from './views/Menu';
 import AboutUs from './views/AboutUs';
 import Status from './views/Status';
-import Landing from './views/'
+import Landing from './views/Landing';
+
 
 function App() {
   return (
