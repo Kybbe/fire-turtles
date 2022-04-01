@@ -315,13 +315,20 @@ nav a:hover {
   justify-content: center;
   align-content: center;
   text-align: center;
-  
- 
 }
 
-.sides2{
-    position: left;
-   left: 50px;
+  .sides2{
+      position: left;
+     left: 50px;
+  }
 
-}
+  /* TEXTS, * = all text exept text that are specified under */ 
 
+  * {
+
+    font-family: 'PT Serif', serif;
+  }
+
+  .menuDescription, .cartPrice, .about p, .about li  {
+    font-family: 'Work Sans', sans-serif;
+  }
