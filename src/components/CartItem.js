@@ -1,4 +1,12 @@
 
+
+import upArrow from '../assets/graphics/arrow-up.svg';
+import downArrow from '../assets/graphics/arrow-down.svg';
+
+import { useDispatch } from "react-redux";
+import { removeFromCart, addToCart } from "../store/menuActions";
+
+
 //här gör vi samma menu & menuItem, vi gör en funktion i en separat fil och skickar sedan in den i Cart för att göra det mer strukturerat. 
 
 function CartItem({item}) {

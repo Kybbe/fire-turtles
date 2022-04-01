@@ -1,12 +1,11 @@
-import upArrow from '../assets/graphics/arrow-up.svg';
-import downArrow from '../assets/graphics/arrow-down.svg';
+
 
 import bag from '../assets/graphics/bag.svg';
 
 import CartItem from './CartItem';
 import { useSelector, useDispatch } from "react-redux";
-import { deleteCart, removeFromCart, addToCart } from "../store/menuActions";
-import { navigate } from "react-redux";
+import { deleteCart} from "../store/menuActions";
+import { useNavigate } from "react-router-dom";
 
 function Cart() {
 
@@ -28,15 +27,7 @@ function Cart() {
 		navigate('/status')
 	}
 	
-	function removeItem(item) {
-		console.log("REMOVE ITEM", item);
-		dispatch( removeFromCart(item) );
-	}
 	
-	function addItem(item) {
-		console.log("adding item to cart", item);
-		dispatch( addToCart(item) );
-	}
 
 	//go through all items in cart and calculate total price from item.price
 	var totalPrice = 0;
@@ -56,8 +47,8 @@ function Cart() {
 			<h1 style={{textAlign: "center"}}>Din beställning</h1>
 
 			{cart.length !== 0 ? <ul className='cartList'>
-				{cart.map(item => (			
-				<CartItem />
+				{cart.map((item, index) => (			
+				<CartItem item={item} key={index} />
 				))}
 			</ul>: <h3 style={{textAlign: "center"}}>Inget i din kundvagn😢</h3>}
 
