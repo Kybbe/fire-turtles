@@ -5,6 +5,15 @@ const addMenu = (data) => {
   }
 }
 
+//skickar in helt ny cart till reducer.
+
+const addCart = (data) => {
+  return{
+    type: 'ADD_CART',
+    payload: data
+  }
+}
+
 const addToCart = (data) => {
   return {
     type: 'ADD_TO_CART',
@@ -32,4 +41,4 @@ const deleteCart = () => {
   }
 }
 
-export { addMenu, addToCart, deleteCart, removeFromCart, setOrderNrAndETA }
+export { addMenu, addToCart, deleteCart, removeFromCart, setOrderNrAndETA, addCart }

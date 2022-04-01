@@ -53,6 +53,8 @@ const inititalState = {
   ETA: 0,
 }
 
+
+
 const MenuReducer = (state = inititalState, action) => {
   switch(action.type) {
     //remove after testing
@@ -67,6 +69,16 @@ const MenuReducer = (state = inititalState, action) => {
         ...state,
         menu: action.payload
       }
+
+
+      //lägger till helt ny cart i state 
+      case 'ADD_CART': 
+        return{
+          ...state,
+          cart: action.payload
+        }
+
+
     //send name and price, and if its in the cart its quantity gets increased
     case 'ADD_TO_CART':
       let newCart = [...state.cart];
@@ -122,5 +134,7 @@ const MenuReducer = (state = inititalState, action) => {
       return state
   }
 }
+
+
 
 export default MenuReducer;
