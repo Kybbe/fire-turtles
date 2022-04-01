@@ -4,8 +4,9 @@ import bag from '../assets/graphics/bag.svg';
 
 import CartItem from './CartItem';
 import { useSelector, useDispatch } from "react-redux";
-import { deleteCart} from "../store/menuActions";
+import { deleteCart, addCart} from "../store/menuActions";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from 'react';
 
 function Cart() {
 
@@ -41,6 +42,33 @@ function Cart() {
 		totalQuantity += Number(cart[i].quantity);
 	}
 
+
+	//NEDAN GÖR VI LOCALSTORAGE TILL CARTEN SÅ DET SPARAS NÄR VI UPPDATERAR SIDAN. 
+      
+
+	 //useEffect - varjegång något uppdateras gör vi en funktion. Kommer senare användas i localstorage / callback.
+	 useEffect(() => {
+		function loadFromLocalStorage() {
+		  let cartFromStorage = JSON.parse(localStorage.getItem("cart")) //localstorage del 2: hämtar datan du skickat/sparat in på webben och sätter vårat state till datan/skickar tillbaka infon. 
+		  if(cartFromStorage !== null && cartFromStorage.length > 0) {
+			dispatch(addCart(cartFromStorage))
+		  }
+		}
+		loadFromLocalStorage()
+	  }, [])
+	
+	  // localStorage del 1; sparar vår info i localstorage/webbläsaren. 
+	  useEffect(() => {
+		function saveToLocalStorage() {
+		  localStorage.setItem("cart", JSON.stringify(cart))
+		}
+		saveToLocalStorage()
+	  }, [cart])
+	
+
+
+
+
 	return(
 		<div>
 			<div className="cart">
@@ -71,5 +99,8 @@ function Cart() {
 		</div>
 	)
 }
+
+
+
 
 export default Cart;
