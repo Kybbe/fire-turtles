@@ -300,27 +300,25 @@ nav a:hover {
   background: #E5674E;
 }
 
-.sides1{
-  position: right;
-  right: 50px;
-  
+
+
+.Sides1{
+  position: absolute;
+  left: 0;
 }
 
-.airbeanfront{
-  position: relative;
-  width: 350px;
-  height: 600px;
-  background: #38846D;
+.landing{
   display: flex;
   justify-content: center;
-  align-content: center;
-  text-align: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
 }
 
-  .sides2{
-      position: left;
-     left: 50px;
-  }
+.Sides2{
+  position: absolute;
+  right: 0;
+}
 
   /* TEXTS, * = all text exept text that are specified under */ 
 
