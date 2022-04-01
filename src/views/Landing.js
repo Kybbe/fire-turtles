@@ -15,8 +15,8 @@ function Redirect(){
 
 }
     return (
-    <section onClick={Redirect}>
-       <div className='landing backgroundLandingGreen'>
+    <section style={{height: "100%"}} onClick={Redirect}>
+       <div className='landing backgroundLandingGreen ' >
         <img src={Landings} alt="landings"></img>
         <img src={Sides1} alt="sides1" className=" Sides1"></img>
         <img src={Sides2} alt="sides2" className="Sides2"></img>
