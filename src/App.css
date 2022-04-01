@@ -305,6 +305,7 @@ nav a:hover {
 .Sides1{
   position: absolute;
   left: 0;
+ 
 }
 
 .landing{
@@ -313,11 +314,14 @@ nav a:hover {
   align-items: center;
   height: 100%;
   position: relative;
+  margin-top: 20%;
+  
 }
 
 .Sides2{
   position: absolute;
   right: 0;
+  
 }
 
   /* TEXTS, * = all text exept text that are specified under */ 
