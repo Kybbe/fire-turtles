@@ -5,14 +5,15 @@ import Sides2 from '../assets/graphics/intro-graphic-right.svg';
 import { useNavigate } from "react-router-dom";
 
 
+
+function Landing() {
+
 function Redirect(){
     const navigate=useNavigate();
 
     navigate('/menu')
 
 }
-
-function Landing() {
     return (
     <section onClick={Redirect}>
         <div className="airbeanfront  ">
