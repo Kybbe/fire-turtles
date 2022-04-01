@@ -5,6 +5,7 @@ import bag from '../assets/graphics/bag.svg';
 
 import { useSelector, useDispatch } from "react-redux";
 import { deleteCart, removeFromCart, addToCart } from "../store/menuActions";
+import { navigate } from "react-redux";
 
 function Cart() {
 
@@ -20,8 +21,10 @@ function Cart() {
 	function order() {
 	  openCart();
 		console.log("ORDER");
+		navigate('/status')
 		//set cart to nothing since we ordered
 		dispatch( deleteCart() );
+		navigate('/status')
 	}
 	
 	function removeItem(item) {
