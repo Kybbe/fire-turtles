@@ -4,7 +4,7 @@ import bag from '../assets/graphics/bag.svg';
 
 import CartItem from './CartItem';
 import { useSelector, useDispatch } from "react-redux";
-import { deleteCart, addCart} from "../store/menuActions";
+import { addCart} from "../store/menuActions";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from 'react';
 
@@ -20,15 +20,12 @@ function Cart() {
 		document.querySelector('.App').classList.toggle('noOverflowScroll');
 	}
 	
-	function order() {
+	async function order() {
 	  openCart();
 		console.log("ORDER");
-		//set cart to nothing since we ordered
-		dispatch( deleteCart() );
-		navigate('/status')
+
+		navigate("/status");
 	}
-	
-	
 
 	//go through all items in cart and calculate total price from item.price
 	var totalPrice = 0;
@@ -42,10 +39,8 @@ function Cart() {
 		totalQuantity += Number(cart[i].quantity);
 	}
 
-
 	//NEDAN GÖR VI LOCALSTORAGE TILL CARTEN SÅ DET SPARAS NÄR VI UPPDATERAR SIDAN. 
-      
-
+    
 	 //useEffect - varjegång något uppdateras gör vi en funktion. Kommer senare användas i localstorage / callback.
 	 useEffect(() => {
 		function loadFromLocalStorage() {
@@ -65,10 +60,6 @@ function Cart() {
 		saveToLocalStorage()
 	  }, [cart])
 	
-
-
-
-
 	return(
 		<div>
 			<div className="cart">
@@ -94,7 +85,7 @@ function Cart() {
 		</div>
 		<div style={{position: "relative"}}>
 			<button className='cartBtn' onClick={openCart}><img src={bag} alt="bag"></img></button>
-			<p className='cartTotal'>{totalQuantity}</p>
+			<p className='cartTotal' onClick={openCart}>{totalQuantity}</p>
 		</div>
 		</div>
 	)

@@ -6,7 +6,6 @@ const addMenu = (data) => {
 }
 
 //skickar in helt ny cart till reducer.
-
 const addCart = (data) => {
   return{
     type: 'ADD_CART',
