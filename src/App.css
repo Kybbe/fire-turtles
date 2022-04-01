@@ -357,8 +357,6 @@ text-align: center;
   font-weight: 700;
   font-size: 22px;
   line-height: 180%;
-  /* or 26px */
-  
   
   align-items: center;
   text-align: center;
@@ -382,3 +380,41 @@ align-items: center;
 text-align: center;
 color: rgba(255, 255, 255, 0.7);
 }
+
+.h1:hover, h2:hover,  li:hover{
+  background: #E5674E;
+}
+
+.sides1{
+  position: right;
+  right: 50px;
+  
+}
+
+.airbeanfront{
+  position: relative;
+  width: 350px;
+  height: 600px;
+  background: #38846D;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+  .sides2{
+      position: left;
+     left: 50px;
+  }
+
+  /* TEXTS, * = all text exept text that are specified under */ 
+
+  * {
+
+    font-family: 'PT Serif', serif;
+  }
+
+  .menuDescription, .cartPrice, .about p, .about li  {
+    font-family: 'Work Sans', sans-serif;
+  }
+

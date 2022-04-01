@@ -21,8 +21,8 @@ function Menu() {
 			<h1 style={{textAlign: "center"}}>Meny</h1>
 
             <ul className='menuList'>
-                { menu.map(item => ( 
-                    <MenuItem item={ item } />
+                { menu.map((item, index) => ( 
+                    <MenuItem item={ item } key={ index } />
                 )) }
 				
 			</ul>

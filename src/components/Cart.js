@@ -3,6 +3,7 @@ import downArrow from '../assets/graphics/arrow-down.svg';
 
 import bag from '../assets/graphics/bag.svg';
 
+import CartItem from './CartItem';
 import { useSelector, useDispatch } from "react-redux";
 import { deleteCart, removeFromCart, addToCart } from "../store/menuActions";
 
@@ -53,17 +54,7 @@ function Cart() {
 
 			{cart.length !== 0 ? <ul className='cartList'>
 				{cart.map(item => (			
-				<li className='cartItem' key={item.name?item.name:""}>
-					<div className='itemText'>
-						<h3 className='cartTitle'>{item.name?item.name:""}</h3>
-						<p className='cartPrice'>{item.price?item.price:""} kr</p>
-					</div>
-					<div className="quantity">
-						<button className='arrow up' onClick={() => addItem({name: item.name, price: item.price})}><img src={upArrow} alt="Up arrow"></img></button>
-						<p className='cartQuantity'>{item.quantity?item.quantity:""}</p>
-						<button className='arrow down' onClick={() => removeItem(item.name)}><img src={downArrow} alt="Down arrow"></img></button>
-					</div>
-				</li>
+				<CartItem />
 				))}
 			</ul>: <h3 style={{textAlign: "center"}}>Inget i din kundvagn😢</h3>}
 
