@@ -1,5 +1,6 @@
 import upArrow from '../assets/graphics/arrow-up.svg';
 import downArrow from '../assets/graphics/arrow-down.svg';
+import {  useNavigate } from 'react-router-dom';
 
 import bag from '../assets/graphics/bag.svg';
 
@@ -7,7 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { deleteCart, removeFromCart, addToCart } from "../store/menuActions";
 
 function Cart() {
-
+const navigate=useNavigate();
 	const dispatch = useDispatch();
   const cart = useSelector(state => state.cart);
 	
@@ -32,6 +33,7 @@ function Cart() {
 	function addItem(item) {
 		console.log("adding item to cart", item);
 		dispatch( addToCart(item) );
+		navigate('/status');
 	}
 
 	//go through all items in cart and calculate total price from item.price
@@ -44,6 +46,7 @@ function Cart() {
 	var totalQuantity = 0;
 	for (let i = 0; i < cart.length; i++) {
 		totalQuantity += Number(cart[i].quantity);
+		const Navigate=navigate
 	}
 
 	return(
@@ -77,6 +80,8 @@ function Cart() {
 				</div>
 			</div>
 			<button className='cartOrder' onClick={order}>Take my money!</button>
+			
+			
 
 		</div>
 		<div style={{position: "relative"}}>
