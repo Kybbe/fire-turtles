@@ -7,9 +7,9 @@ import { useNavigate } from "react-router-dom";
 
 
 function Landing() {
-
-function Redirect(){
     const navigate=useNavigate();
+function Redirect(){
+    
 
     navigate('/menu')
 
