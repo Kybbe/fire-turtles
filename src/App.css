@@ -312,16 +312,21 @@ top: 139px;
 }
 
 .button-status{
-position: absolute;
-width: 184px;
-height: 55px;
-left: 98px;
-top: 530px;
-background: #FFFFFF;
-border-radius: 30px;
-display: flex;
+  position: absolute;
+  width: 184px;
+  height: 55px;
+  left: 98px;
+  top: 530px;
+  
+  background: #FFFFFF;
+  
+  font-family: 'PT Serif';
+font-style: normal;
+
+
 align-items: center;
 text-align: center;
+color: #2F2926;
 }
 
 .order{

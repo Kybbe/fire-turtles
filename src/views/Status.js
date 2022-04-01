@@ -1,12 +1,18 @@
 import Drone from '../assets/graphics/drone.svg';
-import { useEffect, useState} from 'react';
-
+import { useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from "react-redux";
+import { setOrderNrAndETA} from '../store/menuActions';
 
 
 function Status() {
-  const [eta, setEta] = useState('')
-  const [orderNr, setOrderNr] = useState('')
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const eta = useSelector(state => state.ETA);
+  const orderNr = useSelector(state => state.orderNr);
 
+  
+  
   useEffect(() => {
     const url = "https://my-json-server.typicode.com/zocom-christoffer-wallenberg/airbean/order"
 
@@ -14,8 +20,8 @@ function Status() {
       try {
         const response = await fetch(url);
         const json = await response.json();
-        setEta(json.eta);
-        setOrderNr(json.orderNr)
+        dispatch( setOrderNrAndETA(json) )
+        console.log(setOrderNrAndETA(json));
       } catch (error) {
         console.log("error", error);
       }
@@ -24,10 +30,6 @@ function Status() {
     fetchData();
 
 }, []);
-
-
-
-
 
     return (
         <div className="background-status">
@@ -41,7 +43,7 @@ function Status() {
             <h1>Din beställning är på väg!</h1>
           </div>
           <div className="timer">
-            <h3>{eta} minuter</h3>
+            <h3>ETA: {eta}  minuter</h3>
           </div>
           <button className='button-status'><h3>Ok, cool!</h3></button>
         </div>
