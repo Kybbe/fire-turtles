@@ -297,24 +297,25 @@ nav a:hover {
 }
 .sides1{
   position: right;
- right: 0;
+ right: 50px;
   
   }
 
 .airbeanfront{
   position: relative;
-  width: 360px;
+  width: 350px;
   height: 600px;
   background: #38846D;
   display: flex;
   justify-content: center;
   align-content: center;
+  text-align: center;
   
  
 }
 
   .sides2{
       position: left;
-     left: 0;
+     left: 50px;
   
   }
