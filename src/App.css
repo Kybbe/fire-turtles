@@ -295,3 +295,90 @@ nav a:hover {
   background-color: rgba(0, 0, 0, 0.198);
   z-index: 1;
 }
+
+.background-status{
+position: relative;
+width: 375px;
+height: 655px;
+background: #E5674E;
+}
+
+.drone {
+position: absolute;
+width: 216.29px;
+height: 119.06px;
+left: 80px;
+top: 139px;
+}
+
+.button-status{
+position: absolute;
+width: 184px;
+height: 55px;
+left: 98px;
+top: 530px;
+background: #FFFFFF;
+border-radius: 30px;
+display: flex;
+align-items: center;
+text-align: center;
+}
+
+.order{
+  position: absolute;
+  width: 279px;
+  height: 125px;
+  left: 48px;
+  top: 299px;
+  
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 48px;
+  
+  display: flex;
+  align-items: center;
+  text-align: center;
+  
+  color: #FFFFFF;
+
+}
+
+.timer{
+  position: absolute;
+  width: 279px;
+  height: 37px;
+  left: 48px;
+  top: 424px;
+  
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 180%;
+  /* or 26px */
+  
+  
+  align-items: center;
+  text-align: center;
+  
+  color: #FFFFFF;
+}
+
+.ordernum {
+position: absolute;
+width: 279px;
+height: 37px;
+left: 48px;
+top: 62px;
+font-family: 'Work Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 120%;
+display: flex;
+align-items: center;
+text-align: center;
+color: rgba(255, 255, 255, 0.7);
+}
