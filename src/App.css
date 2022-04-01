@@ -295,11 +295,16 @@ nav a:hover {
   background-color: rgba(0, 0, 0, 0.198);
   z-index: 1;
 }
+
+.h1:hover, h2:hover,  li:hover{
+  background: #E5674E;
+}
+
 .sides1{
   position: right;
- right: 50px;
+  right: 50px;
   
-  }
+}
 
 .airbeanfront{
   position: relative;
@@ -314,8 +319,9 @@ nav a:hover {
  
 }
 
-  .sides2{
-      position: left;
-     left: 50px;
-  
-  }
+.sides2{
+    position: left;
+   left: 50px;
+
+}
+
