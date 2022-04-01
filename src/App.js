@@ -7,7 +7,7 @@ import Navbar from './components/Navbar';
 import Menu from './views/Menu';
 import AboutUs from './views/AboutUs';
 import Status from './views/Status';
-
+import Landing from './views/'
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
      
       <div className='transparentBlackBackground hidden'></div>
       <Routes>
-        <Route path="/" element={<Menu />} />  {/* Byt till landing page senare */}
+        <Route path="/" element={<Landing />} />  {/* Byt till landing page senare */}
         <Route path='/about' element={<AboutUs />} />
         <Route path='/menu' element={<Menu />} />
         <Route path='/status' element={<Status />} />
