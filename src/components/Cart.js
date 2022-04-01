@@ -4,7 +4,7 @@ import bag from '../assets/graphics/bag.svg';
 
 import CartItem from './CartItem';
 import { useSelector, useDispatch } from "react-redux";
-import { deleteCart, addCart} from "../store/menuActions";
+import { addCart} from "../store/menuActions";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from 'react';
 
@@ -20,15 +20,12 @@ function Cart() {
 		document.querySelector('.App').classList.toggle('noOverflowScroll');
 	}
 	
-	function order() {
+	async function order() {
 	  openCart();
 		console.log("ORDER");
-		//set cart to nothing since we ordered
-		dispatch( deleteCart() );
-		navigate('/status')
+
+		navigate("/status");
 	}
-	
-	
 
 	//go through all items in cart and calculate total price from item.price
 	var totalPrice = 0;
@@ -42,10 +39,27 @@ function Cart() {
 		totalQuantity += Number(cart[i].quantity);
 	}
 
+	//if "Gustav Adolfsbakelse" and "Bryggkaffe" is in cart, remove 40 from total price for each pair (so if there are 3 pairs, it will remove 120)
+	//the items may not be beside each other in the cart, so we need to check all items in the cart
+	var gustavs = 0;
+	var bryggkaffe = 0;
+	for (let i = 0; i < cart.length; i++) {
+		if (cart[i].name === "Gustav Adolfsbakelse") {
+			gustavs = cart[i].quantity;
+		}
+		if (cart[i].name === "Bryggkaffe") {
+			bryggkaffe = cart[i].quantity;
+		}
+	}
+	//while they are both above 0, remove one from each and remove 40 from total price
+	while (gustavs > 0 && bryggkaffe > 0) {
+		gustavs--;
+		bryggkaffe--;
+		totalPrice -= 40;
+	}
 
 	//NEDAN GÖR VI LOCALSTORAGE TILL CARTEN SÅ DET SPARAS NÄR VI UPPDATERAR SIDAN. 
-      
-
+    
 	 //useEffect - varjegång något uppdateras gör vi en funktion. Kommer senare användas i localstorage / callback.
 	 useEffect(() => {
 		function loadFromLocalStorage() {
@@ -62,13 +76,16 @@ function Cart() {
 		function saveToLocalStorage() {
 		  localStorage.setItem("cart", JSON.stringify(cart))
 		}
+		function makeButtonBigAnimation() {
+			document.querySelector('.cartTotal').classList.add('orderButtonAnimation');
+			setTimeout(() => {
+				document.querySelector('.cartTotal').classList.remove('orderButtonAnimation');
+			}, 300);
+		}		
+		makeButtonBigAnimation();
 		saveToLocalStorage()
 	  }, [cart])
 	
-
-
-
-
 	return(
 		<div>
 			<div className="cart">
@@ -94,13 +111,10 @@ function Cart() {
 		</div>
 		<div style={{position: "relative"}}>
 			<button className='cartBtn' onClick={openCart}><img src={bag} alt="bag"></img></button>
-			<p className='cartTotal'>{totalQuantity}</p>
+			<p className='cartTotal' onClick={openCart}>{totalQuantity}</p>
 		</div>
 		</div>
 	)
 }
-
-
-
 
 export default Cart;

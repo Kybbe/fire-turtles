@@ -1,8 +1,8 @@
 import Drone from '../assets/graphics/drone.svg';
-import { useEffect} from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from "react-redux";
-import { setOrderNrAndETA} from '../store/menuActions';
+import { useNavigate } from "react-router-dom";
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setOrderNrAndETA, deleteCart } from "../store/menuActions";
 
 
 function Status() {
@@ -26,6 +26,9 @@ function Status() {
     };
 
     fetchData();
+    
+    dispatch( deleteCart() )
+    localStorage.removeItem("cart");
 
 }, []);
 
@@ -43,7 +46,8 @@ function Status() {
           <div className="timer">
             <h3>ETA: {eta}  minuter</h3>
           </div>
-          <button className='button-status'><h3>Ok, cool!</h3></button>
+
+          <button className='button-status' onClick={() => {navigate('/menu') }}><h3>Ok, cool!</h3></button>
         </div>
     )
 }

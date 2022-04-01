@@ -9,17 +9,28 @@ import AboutUs from './views/AboutUs';
 import Status from './views/Status';
 import Landing from './views/Landing';
 
+const navbarMenu = [
+    <div key="menuCollection">
+      <Navbar key="navbar" />
+      <Menu key="menu" />
+    </div>
+];
+
+const navbarAboutUs = [
+  <div key="aboutUsCollection">
+    <Navbar key="navbar" />
+    <AboutUs key="aboutUs" />
+  </div>
+];
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-     
       <div className='transparentBlackBackground hidden'></div>
       <Routes>
         <Route path="/" element={<Landing />} />  {/* Byt till landing page senare */}
-        <Route path='/about' element={<AboutUs />} />
-        <Route path='/menu' element={<Menu />} />
+        <Route path='/about' element={navbarAboutUs} />
+        <Route path='/menu' element={navbarMenu } />
         <Route path='/status' element={<Status />} />
       </Routes>
     </div>

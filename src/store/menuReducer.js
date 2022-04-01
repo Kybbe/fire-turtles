@@ -47,13 +47,10 @@ const inititalState = {
       }
     
   ],
-
   cart: [],
   orderNr: 0,
   ETA: 0,
 }
-
-
 
 const MenuReducer = (state = inititalState, action) => {
   switch(action.type) {
@@ -69,16 +66,12 @@ const MenuReducer = (state = inititalState, action) => {
         ...state,
         menu: action.payload
       }
-
-
-      //lägger till helt ny cart i state 
-      case 'ADD_CART': 
-        return{
-          ...state,
-          cart: action.payload
-        }
-
-
+    //lägger till helt ny cart i state 
+    case 'ADD_CART': 
+      return{
+        ...state,
+        cart: action.payload
+      }
     //send name and price, and if its in the cart its quantity gets increased
     case 'ADD_TO_CART':
       let newCart = [...state.cart];

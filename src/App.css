@@ -151,7 +151,16 @@ nav a:hover {
 
   position: absolute;
   right: 10px;
-  top: 10px
+  top: 10px;
+}
+
+.cartTotal {
+  transform: scale(1);
+  transition: transform 0.5s ease;
+}
+
+.orderButtonAnimation {
+  transform: scale(1.3);
 }
 
 .cartTotal {
@@ -164,6 +173,7 @@ nav a:hover {
   width: 20px;
   height: 20px;
   text-align: center;
+  cursor: pointer;
   border-radius: 50%;
 }
 
@@ -244,7 +254,7 @@ nav a:hover {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   cursor: pointer;
 }
 
@@ -294,6 +304,47 @@ nav a:hover {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.198);
   z-index: 1;
+}
+
+.menuItem {
+  background: none;
+  transition: background 0.2s ease;
+}
+
+.menuItem:hover{
+  background: #E5674E;
+}
+
+.menuItem:hover h2 {
+  text-decoration: underline;
+}
+
+.menuItem img {
+  transform: scale(1);
+  transition: transform 0.5s ease;
+}
+
+.menuItem:hover img {
+  transform: scale(1.2);
+}
+
+.Sides1{
+  position: absolute;
+  left: 0;
+}
+
+.landing{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.Sides2{
+  position: absolute;
+  right: 0;
 }
 
 .background-status{
@@ -386,42 +437,13 @@ text-align: center;
 color: rgba(255, 255, 255, 0.7);
 }
 
-.h1:hover, h2:hover,  li:hover{
-  background: #E5674E;
+/* TEXTS, * = all text exept text that are specified under */ 
+
+* {
+  font-family: 'PT Serif', serif;
 }
 
-
-
-.Sides1{
-  position: absolute;
-  left: 0;
- 
+.menuDescription, .cartPrice, .about p, .about li  {
+  font-family: 'Work Sans', sans-serif;
 }
-
-.landing{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  position: relative;
-  margin-top: 20%;
-  
-}
-
-.Sides2{
-  position: absolute;
-  right: 0;
-  
-}
-
-  /* TEXTS, * = all text exept text that are specified under */ 
-
-  * {
-
-    font-family: 'PT Serif', serif;
-  }
-
-  .menuDescription, .cartPrice, .about p, .about li  {
-    font-family: 'Work Sans', sans-serif;
-  }
 
