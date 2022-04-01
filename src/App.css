@@ -295,3 +295,27 @@ nav a:hover {
   background-color: rgba(0, 0, 0, 0.198);
   z-index: 1;
 }
+.sides1{
+  position: right;
+ right: 50px;
+  
+  }
+
+.airbeanfront{
+  position: relative;
+  width: 350px;
+  height: 600px;
+  background: #38846D;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  
+ 
+}
+
+  .sides2{
+      position: left;
+     left: 50px;
+  
+  }
