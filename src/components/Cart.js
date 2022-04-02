@@ -43,6 +43,7 @@ function Cart() {
 	//the items may not be beside each other in the cart, so we need to check all items in the cart
 	var gustavs = 0;
 	var bryggkaffe = 0;
+	var kampanjer = 0;
 	for (let i = 0; i < cart.length; i++) {
 		if (cart[i].name === "Gustav Adolfsbakelse") {
 			gustavs = cart[i].quantity;
@@ -55,6 +56,7 @@ function Cart() {
 	while (gustavs > 0 && bryggkaffe > 0) {
 		gustavs--;
 		bryggkaffe--;
+		kampanjer++;
 		totalPrice -= 40;
 	}
 
@@ -99,11 +101,12 @@ function Cart() {
 
 			<div className='cartBottom'>
 				<div className='cartBottomText'>
-					<h2>Total</h2>
-					<p>Inkl moms + drönarleverans</p>
+					<h2 style={{margin: "0"}}>Total</h2>
+					<h4 className='kampanjer' style={{marginTop: "5px", marginBottom: "0px"}}>{kampanjer > 0 ? `You saved ${kampanjer * 40}kr!` : ""}</h4>
+					<p style={{marginTop: "5px"}}>Inkl moms + drönarleverans</p>
 				</div>
 				<div className='cartBottomPrice'>
-					<h2>{totalPrice} kr</h2>
+					<h2 style={{marginTop: "0"}}>{totalPrice} kr</h2>
 				</div>
 			</div>
 			<button className='cartOrder' onClick={order}>Take my money!</button>
