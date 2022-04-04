@@ -46,8 +46,9 @@ function Status() {
           <div className="timer">
             <h3>ETA: {eta}  minuter</h3>
           </div>
-
+          <div className ='button-button'>
           <button className='button-status' onClick={() => {navigate('/menu') }}><h3>Ok, cool!</h3></button>
+          </div>
         </div>
     )
 }

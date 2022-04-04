@@ -4,7 +4,7 @@ import Sides2 from '../assets/graphics/intro-graphic-right.svg';
 
 import { useNavigate } from "react-router-dom";
 import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addMenu } from '../store/menuActions';
 
 
