@@ -406,3 +406,25 @@ nav a:hover {
   font-family: 'Work Sans', sans-serif;
 }
 
+
+.Header{
+ /* header */
+
+
+position: absolut;
+
+
+}
+.Footer{
+  position: absolut;
+
+  
+}
+.Cortado{
+  position: relative;
+
+  left: 151px;
+ 
+
+border-radius: 50px;
+}
