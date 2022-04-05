@@ -49,8 +49,8 @@ export default function AboutUs() {
         
       </ul>
       <img src={Cortado} alt="sides2" className="Cortado"></img>
-      <h2>EVA CORTADO</h2>
-      <h1>VD & GRUNDARE</h1>
+      <h1 style={{textAlign: "center"}}>EVA CORTADO</h1>
+      <p style={{textAlign: "center"}}>VD & GRUNDARE</p>
       <img src={Footer} alt="sides2" className="Footer"></img>
      
     </div >
