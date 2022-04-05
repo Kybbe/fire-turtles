@@ -293,11 +293,6 @@ nav a:hover {
   bottom: 0;
 }
 
-.about {
-  padding: 10px;
-  padding-top: 40px;
-}
-
 .transparentBlackBackground {
   position: absolute;
   width: 100%;
@@ -406,3 +401,13 @@ nav a:hover {
   font-family: 'Work Sans', sans-serif;
 }
 
+.Cortado{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50px;
+}
+
+.aboutUsText {
+  padding: 10px;
+}
