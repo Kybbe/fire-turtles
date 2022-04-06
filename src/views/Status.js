@@ -10,9 +10,7 @@ function Status() {
   const dispatch = useDispatch();
   const eta = useSelector(state => state.ETA);
   const orderNr = useSelector(state => state.orderNr);
-  const isCartEmpty = localStorage.getItem('cart');
-  
-  
+
   useEffect(() => {
     const url = "https://my-json-server.typicode.com/zocom-christoffer-wallenberg/airbean/order"
 
