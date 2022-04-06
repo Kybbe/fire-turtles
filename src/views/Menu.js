@@ -4,10 +4,19 @@ import footer from '../assets/graphics/graphics-footer.svg';
 import Cart from '../components/Cart';
 
 import { useSelector } from "react-redux";
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function Menu() {
 	//useSelector hämtar menyn från store/state och separerar ut den infon vi vill ha.
 	const menu = useSelector(state => state.menu);
+	const navigate = useNavigate();
+	useEffect(() => {
+		if(menu.length === 0) {
+			navigate('/');
+		}
+	}, [menu]);
+	
 	
 	//hämtar info från state 
 	//rad 21 (ul): loopar igenom varje objekt/item i menyn. 

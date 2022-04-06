@@ -1,10 +1,8 @@
-
-
 import bag from '../assets/graphics/bag.svg';
 
 import CartItem from './CartItem';
 import { useSelector, useDispatch } from "react-redux";
-import { addCart} from "../store/menuActions";
+import { addCart } from "../store/menuActions";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from 'react';
 
@@ -21,6 +19,9 @@ function Cart() {
 	}
 	
 	async function order() {
+		if(cart.length === 0) {
+			return;
+		}
 	  openCart();
 		console.log("ORDER");
 

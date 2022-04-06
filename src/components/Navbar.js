@@ -9,7 +9,6 @@ function Navbar() {
 		document.querySelector('nav').classList.toggle('openNav');
 		document.querySelector('.close').classList.toggle('hidden');
 		document.querySelector('.hamburger').classList.toggle('hidden');
-		document.querySelector('.transparentBlackBackground').classList.toggle('hidden');
 		document.querySelector('.App').classList.toggle('noOverflowScroll');
 	}
 
