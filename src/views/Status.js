@@ -10,7 +10,7 @@ function Status() {
   const dispatch = useDispatch();
   const eta = useSelector(state => state.ETA);
   const orderNr = useSelector(state => state.orderNr);
-  
+
   useEffect(() => {
     const url = "https://my-json-server.typicode.com/zocom-christoffer-wallenberg/airbean/order"
 
@@ -19,17 +19,21 @@ function Status() {
         const response = await fetch(url);
         const json = await response.json();
         dispatch( setOrderNrAndETA(json) )
-        console.log(setOrderNrAndETA(json));
+        console.log( setOrderNrAndETA(json) );
       } catch (error) {
         console.log("error", error);
       }
     };
-
-    fetchData();
     
-    dispatch( deleteCart() )
-    localStorage.removeItem("cart");
-
+    if (localStorage.cart && localStorage.cart.match('name')) {
+      fetchData();
+      dispatch( deleteCart() )
+      window.localStorage.clear();
+    } else {
+      navigate('/menu');
+      
+    }
+       
 }, []);
 
     return (
@@ -52,5 +56,6 @@ function Status() {
         </div>
     )
 }
+
 
 export default Status;
