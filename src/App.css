@@ -390,6 +390,11 @@ nav a:hover {
 .drone {
   animation: droneHovering 5s infinite;
 }
+
+.droneFlyAway {
+  animation: droneFlyAway 5s;
+  animation-fill-mode: forwards;
+}
   
 .timer{
   font-size: 22px;
@@ -427,6 +432,73 @@ nav a:hover {
   padding: 10px;
 }
 
+.profile {
+  min-height: 655px;
+}
+
+#GDPRContainer {
+  display: flex;
+  padding: 5px;
+}
+
+.justifyCenter {
+  display: flex;
+  justify-content: center;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.littleMargin {
+  margin: 0px;
+  margin-top: 8px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 335px;
+  margin: 10px;
+  margin-top: 50px;
+  border-radius: 4px;
+  top: 10px;
+  border-radius: 6px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 2;
+}
+
+.form input:not([type="checkbox"]) {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #2F2926;
+  background: transparent;
+  color: #2F2926;
+  font-size: 1.1em;
+}
+
+.form button, .profileLogOut {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: none;
+  background: #2F2926;
+  color: #FFFFFF;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+
+.profileLogOut {
+  background: #E5674E;
+  margin: 10px;
+  width: calc(100% - 20px);
+}
+
 /* Make animation that goes between negative and positive transform: translateY() positions */
 @keyframes droneHovering {
   0% {
@@ -437,5 +509,14 @@ nav a:hover {
   }
   100% {
     transform: translateY(-10px);
+  }
+}
+
+@keyframes droneFlyAway {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-400px);
   }
 }

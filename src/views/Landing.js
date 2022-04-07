@@ -7,39 +7,30 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { addMenu } from '../store/menuActions';
 
-
-
 function Landing() {
     const navigate=useNavigate();
     const dispatch = useDispatch();
 
     useEffect(() => {
-        const url = "https://my-json-server.typicode.com/zocom-christoffer-wallenberg/airbean/menu"
+        const url = "http://localhost:5002/api/beans";
     
         const fetchData = async () => {
           try {
             const response = await fetch(url);
             const json = await response.json();
-            dispatch( addMenu(json) )
-            console.log(addMenu(json));
+            dispatch( addMenu(json.menu) )
+            console.log(json.menu);
           } catch (error) {
             console.log("error", error);
           }
         };
-    
+
         fetchData();
-    
     }, []);
 
-
-
-
-function Redirect(){
-    
-
+  function Redirect(){
     navigate('/menu')
-
-}
+  }
 
     return (
     <section style={{height: "100%"}} onClick={Redirect}>

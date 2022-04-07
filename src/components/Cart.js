@@ -2,30 +2,61 @@ import bag from '../assets/graphics/bag.svg';
 
 import CartItem from './CartItem';
 import { useSelector, useDispatch } from "react-redux";
-import { addCart } from "../store/menuActions";
+import { addCart, deleteCart } from "../store/menuActions";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 function Cart() {
 
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
   const cart = useSelector(state => state.cart);
+	const user = useSelector(state => state.user);
+
+	const cartElem = useRef(null);
+	const cartTotalElem = useRef(null);
 	
 	function openCart() {
-		document.querySelector('.cart').classList.toggle('openCart');
+		cartElem.current.classList.toggle('openCart');
 		document.querySelector('.transparentBlackBackground').classList.toggle('hidden');
 		document.querySelector('.App').classList.toggle('noOverflowScroll');
 	}
 	
 	async function order() {
+		console.log('order function cart');
 		if(cart.length === 0) {
 			return;
 		}
 	  openCart();
-		console.log("ORDER");
-
-		navigate("/status");
+		console.log('order', user.id);
+		if(user.id !== undefined) {
+			let response = await fetch(`http://localhost:5002/api/beans/order/${user.id}`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({items: cart})
+			})
+			let data = await response;
+			if(data.status === 200) {
+				data = await response.json();
+				console.log("Order placed!")
+				await dispatch({type: "SET_HAS_ORDERED"});
+				await dispatch({type: "SET_ORDER_NR&ETA", payload: {orderNr: data.orderNr, eta: data.eta}});
+				await dispatch({type: "SET_HAS_STARTED_ETA_TIMER", payload: true});
+				await dispatch({type: "SET_ETATIMER_DONE", payload: false});
+				await dispatch( deleteCart() )
+				navigate("/status");
+			}
+			else {
+				console.log("Couldn't place order!")
+			}
+		}
+		else {
+			console.log("Not logged in!")
+			alert("Du måste logga in för att kunna beställa!");
+			navigate('/profile');
+		}
 	}
 
 	//go through all items in cart and calculate total price from item.price
@@ -80,9 +111,10 @@ function Cart() {
 		  localStorage.setItem("cart", JSON.stringify(cart))
 		}
 		function makeButtonBigAnimation() {
-			document.querySelector('.cartTotal').classList.add('orderButtonAnimation');
+			if(cartTotalElem.current.classList === undefined) { return }
+			cartTotalElem.current.classList.add('orderButtonAnimation');
 			setTimeout(() => {
-				document.querySelector('.cartTotal').classList.remove('orderButtonAnimation');
+				cartTotalElem.current.classList.remove('orderButtonAnimation');
 			}, 300);
 		}		
 		makeButtonBigAnimation();
@@ -91,12 +123,12 @@ function Cart() {
 	
 	return(
 		<div>
-			<div className="cart">
+			<div className="cart" ref={cartElem}>
 			<h1 style={{textAlign: "center"}}>Din beställning</h1>
 
 			{cart.length !== 0 ? <ul className='cartList'>
 				{cart.map((item, index) => (			
-				<CartItem item={item} key={index} />
+					<CartItem item={item} key={index} />
 				))}
 			</ul>: <h3 style={{textAlign: "center"}}>Inget i din kundvagn😢</h3>}
 
@@ -115,7 +147,7 @@ function Cart() {
 		</div>
 		<div style={{position: "relative"}}>
 			<button className='cartBtn' onClick={openCart}><img src={bag} alt="bag"></img></button>
-			<p className='cartTotal' onClick={openCart}>{totalQuantity}</p>
+			<p className='cartTotal' ref={cartTotalElem} onClick={openCart}>{totalQuantity}</p>
 		</div>
 		</div>
 	)

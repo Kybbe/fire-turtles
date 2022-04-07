@@ -17,6 +17,7 @@ function Navbar() {
 			<nav className='backgroundBlack'>
 				<NavLink onClick={openNav} to="/menu">Meny</NavLink>
 				<NavLink onClick={openNav} to="/about">Om oss</NavLink>
+				<NavLink onClick={openNav} to="/profile">Min Profil</NavLink>
 				<NavLink onClick={openNav} to="/status">Orderstatus</NavLink>
 			</nav>
 			<button className='navBtn hamburger' onClick={openNav}><img src={hamburger} alt="hamburger"></img></button>

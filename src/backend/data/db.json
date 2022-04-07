@@ -1,0 +1,135 @@
+{
+  "users": [
+    {
+      "id": "27109074-a18f-4b00-be35-63a9288cf6f3",
+      "name": "asd",
+      "email": "asd",
+      "orderHistory": [
+        {
+          "eta": 2,
+          "orderNr": "AB1649352722897Z",
+          "items": [
+            {
+              "name": "Bryggkaffe",
+              "price": 39,
+              "quantity": 12
+            },
+            {
+              "name": "Latte Macchiato",
+              "price": 49,
+              "quantity": 1
+            },
+            {
+              "name": "Kaffe Latte",
+              "price": 54,
+              "quantity": 1
+            },
+            {
+              "name": "Cortado",
+              "price": 39,
+              "quantity": 1
+            },
+            {
+              "name": "Cappuccino",
+              "price": 49,
+              "quantity": 36
+            }
+          ],
+          "total": 2374,
+          "timeStamp": 1649352722897
+        },
+        {
+          "eta": 2,
+          "orderNr": "AB1649353080450X",
+          "items": [
+            {
+              "name": "Bryggkaffe",
+              "price": 39,
+              "quantity": 1
+            }
+          ],
+          "total": 39,
+          "timeStamp": 1649353080450
+        },
+        {
+          "eta": 2,
+          "orderNr": "AB1649353874020X",
+          "items": [
+            {
+              "name": "Caffè Doppio",
+              "price": 49,
+              "quantity": 1
+            }
+          ],
+          "total": 49,
+          "timeStamp": 1649353874020
+        },
+        {
+          "eta": 2,
+          "orderNr": "AB1649354075456Z",
+          "items": [
+            {
+              "name": "Cappuccino",
+              "price": 49,
+              "quantity": 1
+            }
+          ],
+          "total": 49,
+          "timeStamp": 1649354075456
+        },
+        {
+          "eta": 2,
+          "orderNr": "AB1649354367043Y",
+          "items": [
+            {
+              "name": "Cappuccino",
+              "price": 49,
+              "quantity": 1
+            }
+          ],
+          "total": 49,
+          "timeStamp": 1649354367043
+        },
+        {
+          "eta": 2,
+          "orderNr": "AB1649354416177Z",
+          "items": [
+            {
+              "name": "Caffè Doppio",
+              "price": 49,
+              "quantity": 1
+            }
+          ],
+          "total": 49,
+          "timeStamp": 1649354416177
+        },
+        {
+          "eta": 2,
+          "orderNr": "AB1649354772380X",
+          "items": [
+            {
+              "name": "Cappuccino",
+              "price": 49,
+              "quantity": 1
+            }
+          ],
+          "total": 49,
+          "timeStamp": 1649354772380
+        },
+        {
+          "eta": 2,
+          "orderNr": "AB1649355008084Y",
+          "items": [
+            {
+              "name": "Caffè Doppio",
+              "price": 49,
+              "quantity": 2
+            }
+          ],
+          "total": 98,
+          "timeStamp": 1649355008084
+        }
+      ]
+    }
+  ]
+}

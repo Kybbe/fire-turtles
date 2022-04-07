@@ -5,6 +5,10 @@ const inititalState = {
   cart: [],
   orderNr: 0,
   ETA: 0,
+  hasStartedETATimer: false,
+  ETATimerDone: false,
+  user: 0,
+  hasOrdered: false
 }
 
 const MenuReducer = (state = inititalState, action) => {
@@ -77,6 +81,31 @@ const MenuReducer = (state = inititalState, action) => {
         ...state,
         orderNr: action.payload.orderNr,
         ETA: action.payload.eta
+      }
+    case 'ADD_USER':
+      return {
+        ...state,
+        user: action.payload
+      }
+    case 'SET_HAS_ORDERED':
+      return {
+        ...state,
+        hasOrdered: true
+      }
+    case 'DECREMENT_ETA':
+      return {
+        ...state,
+        ETA: state.ETA - 1
+      }
+    case 'SET_HAS_STARTED_ETA_TIMER':
+      return {
+        ...state,
+        hasStartedETATimer: action.payload
+      }
+    case 'SET_ETATIMER_DONE':
+      return {
+        ...state,
+        ETATimerDone: action.payload
       }
     default:
       return state

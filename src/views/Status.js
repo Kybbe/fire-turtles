@@ -1,54 +1,43 @@
 import Drone from '../assets/graphics/drone.svg';
 import { useNavigate } from "react-router-dom";
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { setOrderNrAndETA, deleteCart } from "../store/menuActions";
-
+import { useEffect, useRef } from 'react';
+import { useSelector } from 'react-redux';
 
 function Status() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+
   const eta = useSelector(state => state.ETA);
   const orderNr = useSelector(state => state.orderNr);
+  const hasOrdered = useSelector(state => state.hasOrdered);
+  const ETATimerDone = useSelector(state => state.ETATimerDone);
+  
+  const droneElem = useRef(null);
+
+  useEffect(() => {    
+    if (!hasOrdered) {
+      navigate('/menu');
+    }
+  }, []);
 
   useEffect(() => {
-    const url = "https://my-json-server.typicode.com/zocom-christoffer-wallenberg/airbean/order"
-
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url);
-        const json = await response.json();
-        dispatch( setOrderNrAndETA(json) )
-        console.log( setOrderNrAndETA(json) );
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
-    
-    if (localStorage.cart && localStorage.cart.match('name')) {
-      fetchData();
-      dispatch( deleteCart() )
-      window.localStorage.clear();
-    } else {
-      navigate('/menu');
-      
+    if (hasOrdered && ETATimerDone) {
+      droneElem.current.classList.add('droneFlyAway');
     }
-       
-}, []);
+  }, [ETATimerDone]);
 
     return (
         <div className="background-status">
           <div className="ordernum">
             <h4>Ordernummer: {orderNr} </h4>
           </div>
-          <div className="drone">
+          <div className="drone" ref={droneElem}>
             <img src= {Drone} alt='Drone'/>
           </div>
           <div className="order">
-            <h1>Din beställning är på väg!</h1>
+            <h1>Din beställning är {ETATimerDone ? "framme" : "på väg"}!</h1>
           </div>
           <div className="timer">
-            <h3>ETA: {eta}  minuter</h3>
+            <h3>{ETATimerDone ? "" : `ETA: ${eta} minuter`}</h3>
           </div>
           <div className ='button-button'>
           <button className='button-status' onClick={() => {navigate('/menu') }}><h3>Ok, cool!</h3></button>

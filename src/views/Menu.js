@@ -6,6 +6,7 @@ import Cart from '../components/Cart';
 import { useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 function Menu() {
 	//useSelector hämtar menyn från store/state och separerar ut den infon vi vill ha.
@@ -16,7 +17,6 @@ function Menu() {
 			navigate('/');
 		}
 	}, [menu]);
-	
 	
 	//hämtar info från state 
 	//rad 21 (ul): loopar igenom varje objekt/item i menyn. 
