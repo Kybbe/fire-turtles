@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setOrderNrAndETA, deleteCart } from "../store/menuActions";
 
-
 function Status() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -33,7 +32,6 @@ function Status() {
       navigate('/menu');
       
     }
-       
 }, []);
 
     return (

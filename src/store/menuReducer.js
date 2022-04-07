@@ -9,12 +9,6 @@ const inititalState = {
 
 const MenuReducer = (state = inititalState, action) => {
   switch(action.type) {
-    //remove after testing
-    case 'INCREMENT':
-      return {
-        ...state,
-        counter: state.counter + 1
-      }
     //send in entire menu
     case 'ADD_MENU':
       return {

@@ -23,7 +23,6 @@ function Cart() {
 			return;
 		}
 	  openCart();
-		console.log("ORDER");
 
 		navigate("/status");
 	}
@@ -93,6 +92,8 @@ function Cart() {
 		<div>
 			<div className="cart">
 			<h1 style={{textAlign: "center"}}>Din beställning</h1>
+
+			<div className='pil'></div>
 
 			{cart.length !== 0 ? <ul className='cartList'>
 				{cart.map((item, index) => (			

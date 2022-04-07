@@ -17,7 +17,6 @@ function Menu() {
 		}
 	}, [menu]);
 	
-	
 	//hämtar info från state 
 	//rad 21 (ul): loopar igenom varje objekt/item i menyn. 
 	return (

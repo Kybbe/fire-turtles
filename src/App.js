@@ -33,7 +33,7 @@ function App() {
     <div className="App">
       <div className='transparentBlackBackground hidden' onClick={openCart}></div>
       <Routes>
-        <Route path="/" element={<Landing />} />  {/* Byt till landing page senare */}
+        <Route path="/" element={<Landing />} />
         <Route path='/about' element={navbarAboutUs} />
         <Route path='/menu' element={navbarMenu } />
         <Route path='/status' element={<Status />} />
