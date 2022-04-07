@@ -18,6 +18,11 @@
   color: white;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
 body {
   margin: 0 auto;
   padding: 0;
@@ -126,7 +131,7 @@ nav a:hover {
   margin: 10px;
   margin-top: 50px;
   border-radius: 4px;
-  z-index: 2;
+  z-index: 4;
 }
 
 .openCart {
@@ -152,6 +157,17 @@ nav a:hover {
   position: absolute;
   right: 10px;
   top: 10px;
+}
+
+.pil {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 10px;
+  top: -5px;
+  z-index: 3;
 }
 
 .cartTotal {

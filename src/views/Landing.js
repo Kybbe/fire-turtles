@@ -28,20 +28,15 @@ function Landing() {
         fetchData();
     }, []);
 
-  function Redirect(){
-    navigate('/menu')
-  }
-
     return (
-    <section style={{height: "100%"}} onClick={Redirect}>
+    <section style={{height: "100%"}} onClick={() => {navigate('/menu')}}>
        <div className='landing backgroundLandingGreen ' >
         <img src={Landings} alt="landings"></img>
         <img src={Sides1} alt="sides1" className=" Sides1"></img>
         <img src={Sides2} alt="sides2" className="Sides2"></img>
     </div>
-    </section>
-            
-    )
+    </section>  
+  )
 }
 
 export default Landing;

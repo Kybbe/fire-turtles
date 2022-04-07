@@ -2,8 +2,6 @@ import { useDispatch } from "react-redux";
 import add from '../assets/graphics/add.svg';
 import { addToCart } from "../store/menuActions";
 
-
-
 function MenuItem(props) {
     
     const dispatch = useDispatch();
@@ -14,7 +12,6 @@ function MenuItem(props) {
 	}
 	
     return (
-
         <li className='menuItem' onClick={() => addItem({ name: props.item.title, price: props.item.price })}>
             <img src={add} alt="add" className='menuPlus'></img>
             <div className='menuItemText'>
@@ -22,7 +19,6 @@ function MenuItem(props) {
                 <p className="menuDescription">{ props.item.desc }</p>
             </div>
             <h2 className="menuPrice"> { props.item.price } kr</h2>
-
         </li>
     )
 }

@@ -126,6 +126,8 @@ function Cart() {
 			<div className="cart" ref={cartElem}>
 			<h1 style={{textAlign: "center"}}>Din beställning</h1>
 
+			<div className='pil'></div>
+
 			{cart.length !== 0 ? <ul className='cartList'>
 				{cart.map((item, index) => (			
 					<CartItem item={item} key={index} />
