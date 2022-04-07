@@ -1,6 +1,7 @@
 import header from '../assets/graphics/graphics-header.svg';
 
 import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from 'react';
 
 export default function Profile() {
   const storeUser = useSelector(state => state.user);
@@ -56,6 +57,19 @@ export default function Profile() {
       }
     }
   }
+
+  async function updateUser() {
+    const response = await fetch(`http://localhost:5002/api/beans/profileFind/${storeUser.id}`);
+    const data = await response.json();
+    const newOrderHistory = data.profile.orderHistory;
+    //insert newOrderHistory into storeUser
+    dispatch({type: "UPDATE_ORDERHISTORY", payload: newOrderHistory});
+    console.log(newOrderHistory);
+  }
+
+  useEffect(() => {
+    updateUser();
+  }, []);
 
   let totalTotal = 0;
   if(storeUser !== 0 && storeUser !== null) {

@@ -81,6 +81,14 @@ const MenuReducer = (state = inititalState, action) => {
         ...state,
         user: action.payload
       }
+    case 'UPDATE_ORDERHISTORY':
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          orderHistory: action.payload
+        }
+      }
     case 'SET_HAS_ORDERED':
       return {
         ...state,

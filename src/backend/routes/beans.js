@@ -94,6 +94,15 @@ router.post('/profileFind/', async (req, res) => {
     res.send({profile: profile})
 })
 
+router.get('/profileFind/:uuid', async (req, res) => {
+    //hämta profile
+    let profile = await db.get('users')
+    .find({ id: req.params.uuid })
+    .value()
+
+    res.send({profile: profile})
+})
+
 
 router.get('/key', (req, res) => {
     //get random key
